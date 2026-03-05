@@ -30,6 +30,13 @@ Dieses Projekt ist eine statische Flugbuchungs-Website für DBE Academy, erstell
     ├── from.svg
     ├── to.svg
     └── calendar.svg
+└── fonts/
+    ├── segoe-ui-regular.woff2
+    ├── segoe-ui-regular.woff
+    ├── segoe-ui-semibold.woff2
+    ├── segoe-ui-semibold.woff
+    ├── segoe-ui-bold.woff2
+    └── segoe-ui-bold.woff
 ```
 
 ---
