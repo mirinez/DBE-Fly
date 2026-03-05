@@ -547,8 +547,7 @@ footer p {
     padding: 12px 20px;
     font-size: 12px;
     text-align: center;
-    margin: auto; /* Centers the footer on mobile */
-    margin-bottom: auto; /* Ensures the footer stays at the bottom of the page */
+    margin: auto; /* Centers the footer on tablet */
     }
 
     footer p {
@@ -678,7 +677,6 @@ footer p {
     font-size: 11px;
     text-align: center;
     margin: auto; /* Centers the footer on mobile */
-    margin-bottom: auto; /* Ensures the footer stays at the bottom of the page */
     }
 
     footer p {
