@@ -540,8 +540,14 @@ footer p {
 
     /* Footer */
     footer {
+        display: block;
         padding: 24px 20px;
         font-size: 12px;
+    }
+
+    footer p {
+        color: var(--white);
+        margin: 0;
     }
 }
 
@@ -658,7 +664,13 @@ footer p {
 
     /* Footer */
     footer {
+        display: block;
         padding: 16px 20px;
         font-size: 11px;
+    }
+
+    footer p {
+        color: var(--white);
+        margin: 0;
     }
 }
