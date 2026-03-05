@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die DBE-Fly - Flugbuchung</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER & NAVIGATION
+-->
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="img/logo-green.svg" alt="DBE Academy" class="logo-img-full">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#buchen">Buchen & Vorbereiten</a></li>
+                <li><a href="#buchungen">Meine Buchungen</a></li>
+                <li><a href="#fly">DBE Fly entdecken</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- END OF HEADER & NAVIGATION -->
+
+<!-- ============================================
+     HERO SECTION WITH BACKGROUND IMAGE
+-->
+
+<section class="hero">
+    <!-- Hero background image with overlay -->
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+        
+        <!-- ============================================
+             TABS SECTION
+        -->
+        
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active">
+                <!-- ICON PLANE -->
+                    <img class="tab-icon" src="img/flüge.svg" alt="Flüge">
+                    Flüge
+                </div>
+                <div class="tab">
+                    <!-- ICON PLANE AND HOTEL -->
+                    <img class="tab-icon" src="img/flug_hotel.svg" alt="Flug & Hotel">
+                    Flug & Hotel
+                </div>
+                <div class="tab">
+                    <!-- ICON RENT CAR -->
+                    <img class="tab-icon" src="img/mietwagen.svg" alt="Mietwagen">
+                    Mietwagen
+                </div>
+                <div class="tab">
+                    <!-- ICON HOTEL -->
+                    <img class="tab-icon" src="img/hotel.svg" alt="Hotel">
+                    Hotel
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             FORM SECTION
+        -->
+
+        <div class="form-wrapper">
+            <form class="booking-form">
+                
+                <!-- Trip type selector -->
+                <div class="trip-selector">
+                    <label>
+                        <input type="radio" name="trip-type" value="round" checked>
+                        Hin- und Rückflug
+                    </label>
+                    <label>
+                        <input type="radio" name="trip-type" value="oneway">
+                        Nur Hinflug
+                    </label>
+                </div>
+
+                <!-- Form grid -->
+                <div class="form-grid">
+                    <!-- From field -->
+                    <div class="form-group">
+                        <label for="from">Von</label>
+                        <input type="text" id="from" placeholder="Köln" value="Köln">
+                        <img class="form-icon" src="img/from.svg" alt="from">
+                    </div>
+
+                    <!-- To field -->
+                    <div class="form-group">
+                        <label for="to">Nach</label>
+                        <input type="text" id="to" placeholder="Zielort">
+                        <img class="form-icon" src="img/to.svg" alt="to">
+                    </div>
+
+                    <!-- Departure date -->
+                    <div class="form-group">
+                        <label for="departure">Abflug - Rückflug</label>
+                        <input type="text" id="departure" placeholder="Datum wählen">
+                        <img class="form-icon" src="img/calendar.svg" alt="calendar">
+                    </div>
+
+                    <!-- Passengers and class -->
+                    <div class="form-group">
+                        <label for="passengers">Fluggäste & Klasse</label>
+                        <select id="passengers">
+                            <option>Economy, 1 Reisende(r)</option>
+                            <option>Economy, 2 Reisende</option>
+                            <option>Business, 1 Reisende(r)</option>
+                            <option>Business, 2 Reisende</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Search button -->
+                <button type="submit" class="search-btn">Suchen</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- END OF HERO SECTION -->
+
+<!-- ============================================
+     MAIN CONTENT AREA
+-->
+
+<section class="main-content">
+    <div class="content-container">
+        
+        <!-- Featured article 1 -->
+        <article class="featured-card">
+            <img src="img/photo1.jpg" alt="Flugplan 2024">
+            <div class="card-content">
+                <span class="card-label">Flugplan 2026</span>
+                <h3>Entdecken Sie unsere neuen Destinationen</h3>
+            </div>
+        </article>
+
+        <!-- Featured article 2 -->
+        <article class="featured-card">
+            <img src="img/photo2.jpg" alt="Travel Briefing">
+            <div class="card-content">
+                <span class="card-label">DBE Travel Briefing</span>
+                <h3>Profitieren Sie vom Reiseleitfaden mit nützlichen Tipps</h3>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- END OF MAIN CONTENT AREA -->
+
+<!-- ============================================
+     FOOTER
+-->
+
+<footer>
+    <p>&copy; 2026 Die DBE-Fly - Míriam Domínguez Martínez | DBE Academy </p>
+</footer>
+
+<!-- END OF FOOTER -->
+</body>
+</html>

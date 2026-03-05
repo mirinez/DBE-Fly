@@ -1,0 +1,643 @@
+/* style.css — Die DBE-Fly | Flight Booking Website
+   Míriam Domínguez Martínez - 06.06.2024
+*/
+
+/* ============================================
+   1. ROOT VARIABLES & COLORS
+*/
+
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #17a2a2;
+    --primary-dark: #0d6f6f;
+    --dark-bg: #2d2d2d;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   2. FONTS
+*/
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoe-ui-regular.woff2') format('woff2'),
+         url('../fonts/segoe-ui-regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoe-ui-semibold.woff2') format('woff2'),
+         url('../fonts/segoe-ui-semibold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoe-ui-bold.woff2') format('woff2'),
+         url('../fonts/segoe-ui-bold.woff') format('woff');
+    font-weight: 700;
+}
+
+/* ============================================
+   3. GLOBAL STYLES
+*/
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif; /* Local font Segoe UI */
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6; 
+}
+
+/* ============================================
+   4. HEADER & NAVIGATION
+*/
+
+/* Header styles */
+header {
+    background-color: var(--white);
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Container for header content */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* Full logo image for larger screens */
+.logo-img-full {
+    width: 80px;
+    height: auto;
+}
+
+/* Compact logo image for smaller screens */
+.logo-img-compact {
+    width: 40px;
+    height: auto;
+    display: none; /* Hidden by default, shown on smaller screens */
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1;
+}
+
+/* Tagline styles */
+.logo p {
+    font-size: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased gap for better spacing between links */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+nav a:hover {
+    color: var(--primary-color); /* Hover effect for navigation links */
+}
+
+/* ============================================
+   5. HERO SECTION
+*/
+
+/* Hero section with parallax background and dark overlay for better text visibility */
+.hero {
+    position: relative;
+    height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('img/background.jpg') center/cover; /* Background image with dark overlay for better text visibility */
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(23, 162, 162, 0.1), rgba(13, 111, 111, 0.2)); /* Subtle gradient overlay for added depth */
+    z-index: 1;
+}
+
+/* Content inside the hero section */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* ============================================
+   6. TABS SECTION
+*/
+
+.tabs-container {
+    margin-bottom: 30px; /* Space between tabs and form */
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
+    border-radius: 4px;
+    overflow: hidden;
+    flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+}
+
+.tab {
+    flex: 1; /* Each tab takes equal space */
+    min-width: 120px;
+    padding: 16px 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter background for inactive tabs */
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 500;
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+.tab:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover for better feedback */
+}
+
+.tab.active {
+    background-color: var(--primary-color);
+}
+
+.tab-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Ensures icons are white for better visibility since tabs are dark */
+}
+
+/* ============================================
+   7. BOOKING FORM
+*/
+
+/* Form wrapper with white background and shadow for better visibility against the hero background */
+.form-wrapper {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 3;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 20px; /* Space between form sections */
+}
+
+/* Trip type selector */
+.trip-selector {
+    display: flex;
+    gap: 20px;
+}
+
+.trip-selector label { /* Flexbox for better alignment of radio buttons and labels */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer; /* Cursor pointer */
+}
+
+/* Radio buttons */
+.trip-selector input[type="radio"] {
+    cursor: pointer; /* Cursor pointer */
+}
+
+/* Form grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for better layout */
+    gap: 20px; /* Space between form groups */
+}
+
+.form-group {
+    position: relative;
+    display: flex; /* Flexbox for better alignment of labels and inputs */
+    flex-direction: column; /* Stack label and input vertically */
+}
+
+/* Form labels */
+.form-group label { 
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark); 
+    margin-bottom: 8px;
+    text-transform: uppercase; /* Uppercase for better readability */
+    letter-spacing: 0.5px;
+}
+
+/* Form inputs and selects */
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit; /* Inherit font from body for consistency */
+    transition: all 0.3s ease; /* Smooth transition for focus state */
+    background-color: var(--white);
+}
+
+/* Focus state for inputs and selects */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none; /* Remove default outline */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(23, 162, 162, 0.1); /* Subtle shadow for better focus visibility */
+}
+
+.form-icon {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    width: 20px;
+    height: 20px;
+    color: var(--text-light);
+    pointer-events: none; /* Allows clicks to pass through the icon to the input */
+}
+
+/* Checkbox group */
+.checkbox-group {
+    display: flex; /* Flexbox for better alignment of checkbox and label */
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    cursor: pointer; /* Cursor pointer */
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer; /* Cursor pointer */
+}
+
+/* Search button */
+.search-btn {
+    padding: 14px 32px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none; /* Remove default border */
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer; /* Cursor pointer */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+    text-transform: uppercase; /* Uppercase for better readability */
+    letter-spacing: 0.5px; 
+    align-self: flex-end; /* Aligns the search button to the right in the form */
+}
+
+.search-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px); /* Slight lift effect on hover for */
+    box-shadow: var(--shadow-lg); /* Add shadow on hover*/
+}
+
+.search-btn:active {
+    transform: translateY(0); /* Reset transform on active state */
+    box-shadow: var(--shadow); /* Reduce shadow on active state */
+}
+
+/* ============================================
+   8. MAIN CONTENT AREA
+*/
+
+.main-content {
+    padding: 60px 20px;
+    background-color: var(--white);
+}
+
+.content-container {
+    max-width: 1200px; /* Center the content and set a max width */
+    margin: 0 auto; /* Center the content */
+    display: grid; /* Grid layout for featured cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with a minimum card width of 300px */
+    gap: 30px; /* Space between cards */
+}
+
+/* Featured cards */
+.featured-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Cursor pointer */
+}
+
+.featured-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: var(--shadow-lg); /* Add shadow on hover */
+}
+
+.featured-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ensures the image covers the card area without distortion */
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card-label {
+    display: inline-block; /* Makes the label fit its content */
+    font-size: 11px; /* Smaller font size for labels */
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase; /* Uppercase for better readability */
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.featured-card h3 {
+    font-size: 20px;
+    color: var(--text-dark); /* Darker text color for better contrast */
+    margin-bottom: 12px;
+}
+.featured-card p {
+    font-size: 14px;
+    color: var(--text-light); /* Lighter text color for better readability */
+    line-height: 1.4; /* Increased line height*/
+}
+
+/* ============================================
+   9. FOOTER
+*/
+
+/* Footer styles */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 32px 48px;
+    text-align: center;
+    font-size: 14.4px;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0; /* Removes default margin from the footer paragraph for better spacing */
+}
+
+/* ============================================
+   10. RESPONSIVE DESIGN - TABLET
+*/
+
+@media (max-width: 768px) {
+    
+    /* Header */
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    /* Hero section */
+    .hero {
+        height: 400px;
+        background-attachment: scroll;
+    }
+
+    /* Tabs */
+    .tabs {
+        flex-direction: row;
+    }
+
+    .tab-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Form */
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-btn {
+        align-self: stretch;
+    }
+
+    /* Main content */
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   11. RESPONSIVE DESIGN - MOBILE
+*/
+
+@media (max-width: 480px) {
+    
+    /* Header */
+    header {
+        position: relative;
+        z-index: 100;
+        padding: 15px 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 10px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .logo p {
+        font-size: 9px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 9px;
+        display: inline-block;
+        padding: 8px 8px;
+    }
+
+    /* Hero section */
+    .hero {
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Tabs */
+    .tabs-container {
+        margin-bottom: 10px;
+        order: 1;
+    }
+
+    .tabs {
+        gap: 1px;
+        flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .tab {
+        flex: 1;
+        min-width: auto;
+        padding: 8px 4px;
+        font-size: 0;
+        gap: 0;
+        color: transparent;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .tab.active {
+        background-color: var(--primary-color);
+    }
+
+    .tab-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Form */
+    .form-wrapper {
+        padding: 16px;
+        margin: 0 10px;
+        transform: none;
+        order: 2;
+    }
+
+    .trip-selector {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .trip-selector label {
+        margin-left: 0;
+    }
+
+    .form-grid {
+        gap: 16px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .search-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    /* Main content */
+    /* For mobile, hide the main content to focus on the booking form and hero section */
+    .main-content {
+        display: none;
+    }
+
+    .content-container {
+        display: none;
+    }
+}
