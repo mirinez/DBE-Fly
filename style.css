@@ -438,15 +438,15 @@ nav a:hover {
 
 /* Footer styles */
 footer {
-    background-color: var(--dark-gray);
-    color: var(--white);
+    background-color: var(--white); /* White background for better contrast with text */
+    color: var(--dark-bg); /* Darker text color for better contrast */
     padding: 32px 48px;
     text-align: center;
     font-size: 14.4px;
 }
 
 footer p {
-    color: var(--white);
+    color: var(--dark-bg); /* Darker text color for better contrast */
     margin: 0; /* Removes default margin from the footer paragraph for better spacing */
 }
 
