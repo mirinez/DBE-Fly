@@ -75,7 +75,7 @@ body {
 header {
     background-color: var(--white);
     padding: 20px 0;
-    box-shadow: var(--shadow);
+    box-shadow: none; /* Cambiar de var(--shadow) a none */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -162,6 +162,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     color: var(--white);
+    padding-top: 0; /* Quitar padding para que se pegue al header */
 }
 
 
@@ -189,23 +190,24 @@ nav a:hover {
 */
 
 .tabs-container {
-    margin-bottom: 30px; /* Space between tabs and form */
+    margin-bottom: 0; /* Cambiar de 30px a 0 para que se pegue */
 }
 
 .tabs {
     display: flex;
-    gap: 0;
+    gap: 1px; /* Cambiar de 0 a 1px para separar tabs */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
-    border-radius: 4px;
+    border-radius: 0; /* Cambiar de 4px a 0 */
     overflow: hidden;
     flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+    border-radius: 8px 8px 0 0; /* Add border-radius on the top*/
 }
 
 .tab {
     flex: 1; /* Each tab takes equal space */
     min-width: 120px;
-    padding: 16px 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter background for inactive tabs */
+    padding: 12px 20px; /* Reducir padding */
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter background for inactive tabs */
     color: var(--white);
     font-size: 13px;
     font-weight: 500;
@@ -214,20 +216,31 @@ nav a:hover {
     justify-content: center;
     gap: 8px;
     transition: all 0.3s ease; /* Smooth transition for hover and active states */
+    border: none;
 }
 
 .tab:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover for better feedback */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
 }
 
 .tab.active {
-    background-color: var(--primary-color);
+    background-color: var(--white); /* White background for active tab for better contrast */
+    color: var(--primary-color); /* Primary color for active tab text */
 }
 
 .tab-icon {
     width: 20px;
     height: 20px;
     filter: brightness(0) invert(1); /* Ensures icons are white for better visibility since tabs are dark */
+}
+
+/* I've tried with "fill", but the SVG color doesn't change, 
+   so I used "filter" to achieve the desired color for active icons.
+*/
+.tab-icon-active {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(65%) sepia(56%) saturate(1199%) hue-rotate(122deg) brightness(80%) contrast(86%);
 }
 
 /* ============================================
@@ -238,10 +251,10 @@ nav a:hover {
 .form-wrapper {
     background-color: var(--white);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: none; /* Cambiar de var(--shadow-lg) a none */
     position: relative;
     z-index: 3;
+    border-radius: 0 0 8px 8px ; /* Add border-radius on bottom */
 }
 
 .booking-form {
@@ -488,37 +501,48 @@ footer p {
 
     /* Tabs */
     .tabs-container {
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     .tabs {
         gap: 1px;
         flex-wrap: nowrap;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+        border-radius: 8px 8px 0 0; /* Add border-radius on the top*/
     }
 
     .tab {
         flex: 1;
         min-width: auto;
-        padding: 8px 4px;
-        font-size: 0;
-        gap: 0;
-        color: transparent;
+        padding: 12px 20px;
+        font-size: 0; /* Hide text */
+        gap: 8px;
+        color: var(--white);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .tab:hover {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
     .tab.active {
-        background-color: var(--primary-color);
+        background-color: var(--white);
+        color: var(--primary-color);
     }
 
     .tab-icon {
         width: 16px;
         height: 16px;
+        filter: brightness(0) invert(1);
     }
 
     /* Form */
     .form-wrapper {
         padding: 20px;
+        border-radius: 0;
+        box-shadow: none;
+        border-radius: 0 0 8px 8px ; /* Add border-radius on bottom */
     }
 
     .form-grid {
@@ -538,16 +562,17 @@ footer p {
         display: none !important;
     }
 
-    /* Footer - Always visible */
+    /* Footer */
     footer {
-    display: block !important;
-    visibility: visible !important;
-    background-color: var(--white);
-    color: var(--dark-bg);
-    padding: 12px 20px;
-    font-size: 12px;
-    text-align: center;
-    margin: auto; /* Centers the footer on tablet */
+        display: block !important;
+        visibility: visible !important;
+        background-color: var(--white);
+        color: var(--dark-bg);
+        padding: 12px 20px;
+        font-size: 12px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: auto;
     }
 
     footer p {
@@ -603,23 +628,39 @@ footer p {
     }
 
     /* Tabs */
+    /* No margin to keep it symmetric to the hero section */
     .tabs-container {
-        margin-bottom: 10px;
-        order: 1;
+        margin-bottom: 0; 
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;
     }
 
     .tabs {
-        gap: 1px;
+        gap: 1px; /* Keep a small gap between tabs for better separation */
         flex-wrap: nowrap;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 8px 8px 0 0; /* Add border-radius on the top*/
     }
 
     .tab {
-        padding: 8px 4px;
+        padding: 12px 20px;
+        font-size: 0; /* Hide text */
+    }
+
+    .tab:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .tab.active {
+        background-color: var(--white);
+        color: var(--primary-color);
     }
 
     .tab-icon {
         width: 16px;
         height: 16px;
+        filter: brightness(0) invert(1);
     }
 
     /* Form */
@@ -628,6 +669,8 @@ footer p {
         margin: 0 10px;
         transform: none;
         order: 2;
+        border-radius: 0 0 8px 8px ; /* Add border-radius on bottom */
+        box-shadow: none;
     }
 
     .trip-selector {
@@ -667,16 +710,17 @@ footer p {
         display: none !important;
     }
 
-    /* Footer - Always visible */
+    /* Footer */
     footer {
-    display: block !important;
-    visibility: visible !important;
-    background-color: var(--white);
-    color: var(--dark-bg);
-    padding: 12px 20px;
-    font-size: 11px;
-    text-align: center;
-    margin: auto; /* Centers the footer on mobile */
+        display: block !important;
+        visibility: visible !important;
+        background-color: var(--white);
+        color: var(--dark-bg);
+        padding: 12px 20px;
+        font-size: 11px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: auto;
     }
 
     footer p {
