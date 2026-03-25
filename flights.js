@@ -19,10 +19,60 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             flights = data;
+            populateDestinations();
+            initDatePicker();
             attachEvents();
         })
         .catch(err => console.error('Fehler beim Laden der Flugdaten:', err));
 });
+
+/*
+   POPULATE: Fill destination <select> with unique values from JSON
+*/
+function populateDestinations() {
+    const select = document.getElementById('to');
+    if (!select) return;
+
+    const destinations = [...new Set(flights.map(f => f.ziel))].sort();
+    select.innerHTML = '<option value="">Zielort wählen…</option>';
+    destinations.forEach(dest => {
+        const option = document.createElement('option');
+        option.value = dest;
+        option.textContent = dest;
+        select.appendChild(option);
+    });
+}
+
+/*
+   DATE PICKER: Set min dates and handle return date visibility
+*/
+function initDatePicker() {
+    const departureInput = document.getElementById('departure');
+    const returnInput    = document.getElementById('return-date');
+    const tripRadios     = document.querySelectorAll('input[name="trip-type"]');
+    const today          = new Date().toISOString().split('T')[0];
+
+    if (departureInput) {
+        departureInput.min = today;
+        departureInput.addEventListener('change', () => {
+            if (returnInput) {
+                returnInput.min = departureInput.value || today;
+                if (returnInput.value && returnInput.value < departureInput.value) {
+                    returnInput.value = '';
+                }
+            }
+        });
+    }
+
+    function toggleReturnDate() {
+        const isRound = document.querySelector('input[name="trip-type"]:checked')?.value === 'round';
+        const wrapper = document.getElementById('return-date-group');
+        if (wrapper) wrapper.style.display = isRound ? 'flex' : 'none';
+    }
+
+    tripRadios.forEach(r => r.addEventListener('change', toggleReturnDate));
+    toggleReturnDate();
+}
 
 /*
    EVENTS
@@ -144,7 +194,7 @@ function renderFlightCard(flight, flightClass) {
     const price      = flight.preis[flightClass];
     const stopsLabel = flight.stops === 0
         ? '<span class="badge badge-direct">Direktflug</span>'
-        : `<span class="badge badge-stops">${flight.stops} Stopp</span>`;
+        : `<span class="badge badge-stops">${flight.stops} Stop</span>`;
 
     const startCode = flight.start.match(/\(([^)]+)\)/)?.[1] ?? '';
     const startName = flight.start.replace(/\s*\([^)]*\)/, '');
