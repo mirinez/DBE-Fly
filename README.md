@@ -8,7 +8,7 @@
 
 ### Projektbeschreibung
 
-Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML und CSS. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML), Design (CSS) und JavaScript.
+Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML / CSS / JavaScript. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML), Design (CSS) und JavaScript.
 
 ---
 
