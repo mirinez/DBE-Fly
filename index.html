@@ -1,3 +1,8 @@
+<!-- 
+   index.html - Die DBE-Fly | Flight Booking Website
+   Míriam Domínguez Martínez - 25.03.2026
+-->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,7 +22,7 @@
         <div class="logo">
             <img src="img/logo-green.svg" alt="DBE Academy" class="logo-img-full">
         </div>
-        
+
         <nav>
             <ul>
                 <li><a href="#buchen">Buchen & Vorbereiten</a></li>
@@ -35,34 +40,29 @@
 -->
 
 <section class="hero">
-    <!-- Hero background image with overlay -->
     <div class="hero-overlay"></div>
-    
+
     <div class="hero-content">
-        
+
         <!-- ============================================
              TABS SECTION
         -->
-        
+
         <div class="tabs-container">
             <div class="tabs">
                 <div class="tab active">
-                <!-- ICON PLANE -->
                     <img class="tab-icon-active" src="img/flüge.svg" alt="Flüge">
                     Flüge
                 </div>
                 <div class="tab">
-                    <!-- ICON PLANE AND HOTEL -->
                     <img class="tab-icon" src="img/flug_hotel.svg" alt="Flug & Hotel">
                     Flug & Hotel
                 </div>
                 <div class="tab">
-                    <!-- ICON RENT CAR -->
                     <img class="tab-icon" src="img/mietwagen.svg" alt="Mietwagen">
                     Mietwagen
                 </div>
                 <div class="tab">
-                    <!-- ICON HOTEL -->
                     <img class="tab-icon" src="img/hotel.svg" alt="Hotel">
                     Hotel
                 </div>
@@ -74,8 +74,8 @@
         -->
 
         <div class="form-wrapper">
-            <form class="booking-form">
-                
+            <form class="booking-form" id="booking-form">
+
                 <!-- Trip type selector -->
                 <div class="trip-selector">
                     <label>
@@ -90,40 +90,35 @@
 
                 <!-- Form grid -->
                 <div class="form-grid">
-                    <!-- From field -->
                     <div class="form-group">
                         <label for="from">Von</label>
-                        <input type="text" id="from" placeholder="Köln" value="Köln">
+                        <input type="text" id="from" placeholder="Köln" value="Stuttgart (STR)">
                         <img class="form-icon" src="img/from.svg" alt="from">
                     </div>
 
-                    <!-- To field -->
                     <div class="form-group">
                         <label for="to">Nach</label>
                         <input type="text" id="to" placeholder="Zielort">
                         <img class="form-icon" src="img/to.svg" alt="to">
                     </div>
 
-                    <!-- Departure date -->
                     <div class="form-group">
                         <label for="departure">Abflug - Rückflug</label>
                         <input type="text" id="departure" placeholder="Datum wählen">
                         <img class="form-icon" src="img/calendar.svg" alt="calendar">
                     </div>
 
-                    <!-- Passengers and class -->
                     <div class="form-group">
                         <label for="passengers">Fluggäste & Klasse</label>
                         <select id="passengers">
-                            <option>Economy, 1 Reisende(r)</option>
-                            <option>Economy, 2 Reisende</option>
-                            <option>Business, 1 Reisende(r)</option>
-                            <option>Business, 2 Reisende</option>
+                            <option value="economy">Economy, 1 Reisende(r)</option>
+                            <option value="economy">Economy, 2 Reisende</option>
+                            <option value="business">Business, 1 Reisende(r)</option>
+                            <option value="business">Business, 2 Reisende</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- Search button -->
                 <button type="submit" class="search-btn">Suchen</button>
             </form>
         </div>
@@ -134,22 +129,50 @@
 <!-- END OF HERO SECTION -->
 
 <!-- ============================================
+     FLIGHT RESULTS SECTION
+-->
+
+<section class="results-section" id="results-section" style="display: none;">
+    <div class="results-container">
+
+        <div class="results-header">
+            <div class="results-title">
+                <h2 id="results-heading">Verfügbare Flüge</h2>
+                <p id="results-subtitle" class="results-subtitle"></p>
+            </div>
+            <div class="results-count">
+                <span id="results-count-text"></span>
+            </div>
+        </div>
+
+        <!-- Results list (populated by js/flights.js) -->
+        <div class="results-list" id="results-list"></div>
+
+        <div class="no-results" id="no-results" style="display: none;">
+            <p>Keine Flüge für diese Strecke gefunden.</p>
+            <p>Bitte überprüfen Sie Ihre Eingabe.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- END OF FLIGHT RESULTS SECTION -->
+
+<!-- ============================================
      MAIN CONTENT AREA
 -->
 
-<section class="main-content">
+<section class="main-content" id="main-content">
     <div class="content-container">
-        
-        <!-- Featured article 1 -->
+
         <article class="featured-card">
-            <img src="img/photo1.jpg" alt="Flugplan 2024">
+            <img src="img/photo1.jpg" alt="Flugplan 2026">
             <div class="card-content">
                 <span class="card-label">Flugplan 2026</span>
                 <h3>Entdecken Sie unsere neuen Destinationen</h3>
             </div>
         </article>
 
-        <!-- Featured article 2 -->
         <article class="featured-card">
             <img src="img/photo2.jpg" alt="Travel Briefing">
             <div class="card-content">
@@ -168,9 +191,14 @@
 -->
 
 <footer>
-    <p>&copy; 2026 Die DBE-Fly - Míriam Domínguez Martínez | DBE Academy </p>
+    <p>&copy; 2026 Die DBE-Fly - Míriam Domínguez Martínez | DBE Academy</p>
 </footer>
 
 <!-- END OF FOOTER -->
+
+<!-- JS at the end of body so the DOM is ready -->
+<script src="data/flights.json"></script>
+<script src="flights.js"></script>
+
 </body>
 </html>
