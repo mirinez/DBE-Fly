@@ -2,13 +2,13 @@
 **Autorin:** Míriam Domínguez Martínez  
 **Datum:** 25.03.2026  
 **Kurs:** Full Stack Web Development - DBE Academy  
-**Thema:** HTML & CSS - Flight Booking Website Die DBE-Fly
+**Thema:** HTML & CSS & JavaScript - Flight Booking Website Die DBE-Fly
 
 ---
 
 ### Projektbeschreibung
 
-Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML / CSS / JavaScript. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML), Design (CSS) und JavaScript.
+Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML / CSS / JavaScript. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML), Design (CSS) und Zielauswahl und Rückgabe von Zeitaufwand, Haltestellen, Kosten usw. (JavaScript).
 
 ---
 
