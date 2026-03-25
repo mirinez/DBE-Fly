@@ -1,14 +1,14 @@
-## DBE-Fly – Hausaufgabe
+## DBE-Fly - Hausaufgabe
 **Autorin:** Míriam Domínguez Martínez  
-**Datum:** 09.03.2026  
-**Kurs:** Full Stack Web Development – DBE Academy  
-**Thema:** HTML & CSS – Flight Booking Website Die DBE-Fly
+**Datum:** 25.03.2026  
+**Kurs:** Full Stack Web Development - DBE Academy  
+**Thema:** HTML & CSS - Flight Booking Website Die DBE-Fly
 
 ---
 
 ### Projektbeschreibung
 
-Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML und CSS. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML) und Design (CSS).
+Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt ausschließlich mit HTML und CSS. Ziel der Aufgabe war es, die wichtigsten Grundkonzepte beider Sprachen praktisch anzuwenden: semantische Seitenstruktur, responsive Layouts mit CSS Grid und Flexbox, Custom Properties für Farbverwaltung, responsive Design für mobile Geräte und die strikte Trennung von Inhalt (HTML), Design (CSS) und JavaScript.
 
 ---
 
@@ -17,7 +17,8 @@ Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt au
 /
 ├── index.html         
 ├── style.css         
-├── README.md           
+├── README.md
+├── flights.js           
 └── img/
     ├── background.jpg       
     ├── photo1.jpg       
@@ -37,6 +38,8 @@ Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt au
     ├── segoe-ui-semibold.woff
     ├── segoe-ui-bold.woff2
     └── segoe-ui-bold.woff
+└── data/
+    └── flights.json
 ```
 
 ---
@@ -50,5 +53,4 @@ Dieses Projekt ist eine statische Flugbuchungs-Website, Die DBE-Fly, erstellt au
 
 ---
 
-
-*Full Stack Web Development Kurs – DBE Academy, 2026.*
+*Full Stack Web Development Kurs - DBE Academy, 2026.*
