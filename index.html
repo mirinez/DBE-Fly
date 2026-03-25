@@ -98,13 +98,21 @@
 
                     <div class="form-group">
                         <label for="to">Nach</label>
-                        <input type="text" id="to" placeholder="Zielort">
+                        <select id="to">
+                            <option value="">Zielort wählen…</option>
+                        </select>
                         <img class="form-icon" src="img/to.svg" alt="to">
                     </div>
 
                     <div class="form-group">
-                        <label for="departure">Abflug - Rückflug</label>
-                        <input type="text" id="departure" placeholder="Datum wählen">
+                        <label for="departure">Abflug</label>
+                        <input type="date" id="departure">
+                        <img class="form-icon" src="img/calendar.svg" alt="calendar">
+                    </div>
+
+                    <div class="form-group" id="return-date-group">
+                        <label for="return-date">Rückflug</label>
+                        <input type="date" id="return-date">
                         <img class="form-icon" src="img/calendar.svg" alt="calendar">
                     </div>
 
@@ -197,7 +205,6 @@
 <!-- END OF FOOTER -->
 
 <!-- JS at the end of body so the DOM is ready -->
-<script src="data/flights.json"></script>
 <script src="flights.js"></script>
 
 </body>
